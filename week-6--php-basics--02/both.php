@@ -13,7 +13,7 @@ function both(array $nums1, array $nums2) : array {
         }
     }
 
-    return array_unique($result);
+    return $result;
 }
 
 var_dump(
