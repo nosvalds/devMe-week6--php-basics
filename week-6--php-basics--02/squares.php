@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 function squares(array $numbers) : array {
-    foreach ($numbers as $key => $number) {
+    foreach ($numbers as $number) {
         $result[] = $number * $number;
     }
     return $result;

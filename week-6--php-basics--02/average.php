@@ -5,7 +5,7 @@ declare(strict_types=1);
 function average(array $values) : float {
     $sum = 0;
 
-    foreach ($values as $i => $value) {
+    foreach ($values as $value) {
         $sum += $value;
     }
         

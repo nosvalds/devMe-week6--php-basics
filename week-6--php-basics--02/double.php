@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 function double(array $numbers) : array {
-    foreach ($numbers as $key => $num) {
+    foreach ($numbers as $num) {
         $result[] = $num * 2;
     }
 
