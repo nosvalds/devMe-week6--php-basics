@@ -5,6 +5,5 @@ for ($i = 1; $i <= 100; $i += 1) {
     $result .= ($i%5 === 0 ) ? "Buzz" : "";
     // $result += ($i%7 === 0) ? "Splat" : "";
     // $result += ($i%11 === 0) ? "Boom" : "";
-    echo ($result !== "") ? $result : $i; 
-    echo "\n";
+    echo (($result !== "") ? $result : $i ) . "\n"; 
 }
