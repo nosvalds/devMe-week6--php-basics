@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 function zOrQ(string $str) : bool {
-    return preg_match("/[qzQZ]/", $str) === 1;
+    return preg_match("/[qz]/i", $str) === 1;
 }
 
 var_dump(zOrQ("blah")); // bool(false)
