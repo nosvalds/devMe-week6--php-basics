@@ -5,7 +5,6 @@ declare(strict_types=1);
 function threeOs(string $str) : bool {
     return preg_match("/[oO]{3,}/", $str) === 1;
 }
-// [oO]{3,}
 
 var_dump(threeOs("Hello")); // bool(false)
 var_dump(threeOs("Helloo")); // bool(false)

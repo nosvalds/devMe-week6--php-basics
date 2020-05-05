@@ -5,7 +5,6 @@ declare(strict_types=1);
 function zOrQ(string $str) : bool {
     return preg_match("/[qzQZ]/", $str) === 1;
 }
-// [qzQZ]
 
 var_dump(zOrQ("blah")); // bool(false)
 var_dump(zOrQ("blqh")); // bool(true)
