@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-// 
-// Spaces - (^\s)|(\s$)
-// Emails - [a-z]+@[a-z]+\.[a-z]+
-//          \w+@\w+\.\w+
+function validEmail(string $str) : bool {
+    $str = preg_replace("/(^\s)|(\s$)/", "", $str);
+    return filter_var($str, FILTER_VALIDATE_EMAIL) === $str;
+}
 
 var_dump(validEmail(" blahf   ")); // bool(false)
 var_dump(validEmail(" blah@f")); // bool(false)
