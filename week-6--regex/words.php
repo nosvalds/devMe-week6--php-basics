@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 function words(string $str) : array {
-    return preg_split("/\s|,\s/", $str);
+    return preg_split("/\s|,\s/", $str); // Alt: /,?\s/ or /[,\s]/
 }
 
 var_dump(words("This is a sentence")); // ["This", "is", "a", "sentence"]
