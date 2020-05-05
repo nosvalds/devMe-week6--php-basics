@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-// … your function here
+// /00[0-9]/
 
 var_dump(mi5("007")); // bool(true)
 var_dump(mi5("oo8")); // bool(false)
