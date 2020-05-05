@@ -3,10 +3,8 @@
 declare(strict_types=1);
 
 function phoneNumber(string $str) : bool {
-    echo $str;
-    return preg_match("/[0-9-]*/", $str) === 1;
+    return preg_match("/^[0-9-]*$/", $str) === 1;
 }
-// [0-9-]*
 
 var_dump(phoneNumber("blah")); // bool(false)
 var_dump(phoneNumber("12-323-5-344")); // bool(true)
