@@ -57,7 +57,7 @@ class Recipe
             "ingredient" => $ingredient,
             "amount" => $amount,
         ];
-        
+
         return $this;
     }
 
@@ -86,6 +86,8 @@ $cake->addIngredient($eggs, 2);
 
 // we can add a method
 $cake->addMethod("Put them in a bowl, mix them together, cook for a bit. Job's a good'un");
+
+var_dump($cake);
 
 // we can see the recipe
 //var_dump($cake->display());
