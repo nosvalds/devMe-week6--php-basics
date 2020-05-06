@@ -24,6 +24,40 @@ class Person
     }
 }
 
+// house
+class House
+{
+    // static methods
+    public static function census(array $houses) : array
+    {
+        $census = [];
+
+        foreach ($houses as $house) {
+            $census = array_merge($census, $house->getDwellers());
+        }
+
+        return $census;
+    }
+
+    // properties
+    private $dwellers = [];
+
+    // methods
+
+    // add dwellers
+    public function addDweller(object $person) : object
+    {
+        $this->dwellers[] = $person;
+        return $this;
+    }
+
+    // get dwellers
+    public function getDwellers() : array
+    {
+        return $this->dwellers;
+    }
+}
+
 // create some people
 $carlton = new Person("Carlton", 25);
 $ida = new Person("Ida", 32);
@@ -47,5 +81,5 @@ var_dump(House::census([$house1, $house2])); // array(4) [$carlton, $ida, $estel
 var_dump(House::census([$house2])); // array(2) [$estelle, $jana]
 
 // return the average ages of the houses
-var_dump(House::averageAge([$house1, $house2])); // float(40.5)
-var_dump(House::averageAge([$house1])); // float(28.5)
+// var_dump(House::averageAge([$house1, $house2])); // float(40.5)
+// var_dump(House::averageAge([$house1])); // float(28.5)
