@@ -33,7 +33,11 @@ class Ingredient
     }
 }
 
-// Recipe Class
+// Recipe Class 
+// In your Recipe class, working out how to display the recipe takes quite a bit of processing. As does checking the dietary requirements. Update the Recipe class so that it caches the result of the display() and dietary() methods. Make sure the cache is cleared when you add a new ingredient or method.
+
+// Hint: You can place some echo calls around the file to check if a bit of code is running multiple times.
+
 class Recipe 
 {
     // properties
