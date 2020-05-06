@@ -41,10 +41,16 @@ class House
         return $census;
     }
 
-        // avgAge
-    public  static function averageAge(array $houses) : array
+        // average age static function
+    public static function averageAge(array $houses) : float
     {
-        # code...
+        $sum = 0;
+
+        foreach ($houses as $house) {
+            $sum += $house->avgHouseAge();
+        }
+
+        return $sum / count($houses);
     }
 
     // properties
@@ -63,6 +69,18 @@ class House
     public function getDwellers() : array
     {
         return $this->dwellers;
+    }
+
+        // avg house age
+    public function avgHouseAge() : float
+    {
+        $sum = 0;
+
+        foreach ($this->dwellers as $person) {
+            $sum += $person->getAge();
+        }
+
+        return $sum / count($this->dwellers);
     }
 }
 
@@ -92,5 +110,5 @@ var_dump(House::census([$house1, $house2])); // array(4) [$carlton, $ida, $estel
 var_dump(House::census([$house2])); // array(2) [$estelle, $jana]
 
 // return the average ages of the houses
-// var_dump(House::averageAge([$house1, $house2])); // float(40.5)
-// var_dump(House::averageAge([$house1])); // float(28.5)
+var_dump(House::averageAge([$house1, $house2])); // float(40.5)
+var_dump(House::averageAge([$house1])); // float(28.5)
