@@ -61,4 +61,4 @@ $address->setStreet("12 Cantelope Way")
         ->setTown("Swansea");
 
 // logs the new full address neatly
-var_dump($address->fullAddress()); // string(34) "12 Cantelope Way, SW5 8RQ, Swansea"
+var_dump($address->fullAddress()); // string(34) "12 Cantelope Way, Swansea, SW5 8RQ"
