@@ -25,7 +25,7 @@ class BasketItem
         return $this->price;
     }
 
-    // Description
+    // description
     public function getDescription()
     {
         return $this->description;
@@ -66,7 +66,6 @@ class Basket
         }
         return $list;
     }
-
 }
 
 $basket = new Basket();
