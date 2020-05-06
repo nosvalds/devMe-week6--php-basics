@@ -42,7 +42,7 @@ class Car
 
         // add Journey
 
-    public function addJourney(int $distance) : object
+    public function addJourney(int $distance) : Car
     {
         $this->mileage += $distance;
         return $this;
