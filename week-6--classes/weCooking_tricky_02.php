@@ -91,8 +91,8 @@ class Recipe
         return $displayStr;
     }
 
-    // dietary info list
-    public function dietary() : string
+    // dietary info list array
+    private function dietaryArray() : array
     {
         $dietaryList = [];
         
@@ -103,9 +103,18 @@ class Recipe
             }
         }
 
-        $dietaryList = array_unique($dietaryList); // remove duplicates
+        return array_unique($dietaryList); // remove duplicates
+    }
 
-        return implode($dietaryList,", "); // implode to turn into a string and return
+    public function dietary() : string
+    {
+        return implode(", ", $this->dietaryArray()); // implode to turn into a string and return
+    }
+
+    // vegan?
+    public function vegan() : bool
+    {
+        return array_search("animal produce", $this->dietaryArray()) === false;
     }
 }
 
@@ -148,4 +157,4 @@ var_dump($cake->display());
 var_dump($cake->dietary()); // string(29) "gluten, animal produce, dairy"
 
 // is the recipe vegan? (i.e. contains animal produce)
-// var_dump($cake->vegan()); // bool(false)
+var_dump($cake->vegan()); // bool(false)
