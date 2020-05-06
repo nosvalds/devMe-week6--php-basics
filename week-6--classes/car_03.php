@@ -2,45 +2,45 @@
 
 declare(strict_types=1);
 
-// Class
+// class
 class Car 
 {
-    // Properties
+    // properties
     private $make;
     private $numberPlate;
     private $mileage = 0; // start at 0
 
-    // Constructor
+    // constructor
     public function __construct(string $make, string $numberPlate) 
     {
         $this->make = $make;
         $this->numberPlate = $numberPlate;
     }
 
-    // Methods
+    // methods
 
-    // get number plate
+        // get number plate
 
     public function getNumberplate() : string
     {
         return $this->numberPlate;
     }
 
-    // get make
+        // get make
 
     public function getMake() : string
     {
         return $this->make;
     }
 
-    // get mileage
+        // get mileage
 
     public function getMileage() : int
     {
         return $this->mileage;
     }
 
-    // add Journey
+        // add Journey
 
     public function addJourney(int $distance) : object
     {
