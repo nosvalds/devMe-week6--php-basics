@@ -67,6 +67,36 @@ class Recipe
         $this->method = $method;
         return $this;
     }
+
+    // display
+    public function display() : string
+    {
+        // Recipe Name
+        $displayStr = "{$this->name}\n\n";
+
+        // Ingredients header
+        $displayStr .= "Ingredients\n\n";
+
+        // Ingredients
+        foreach ($this->ingredients as $ingredient) {
+            $displayStr .= "- "; // dash
+            $displayStr .= "{$ingredient['amount']} "; // amount
+            $displayStr .= "{$ingredient['ingredient']->getName()}\n"; // ingredient name
+        }
+
+        // Method
+        $displayStr .= "\nMethod\n\n";
+        $displayStr .= "{$this->method}";
+
+        return $displayStr;
+    }
+
+    // dietary info list
+    public function dietary()
+    {
+        // string(29) "gluten, animal produce, dairy"
+        
+    }
 }
 
 // ingredients take a name, followed by an array of dietary notes
@@ -87,10 +117,8 @@ $cake->addIngredient($eggs, 2);
 // we can add a method
 $cake->addMethod("Put them in a bowl, mix them together, cook for a bit. Job's a good'un");
 
-var_dump($cake);
-
 // we can see the recipe
-//var_dump($cake->display());
+var_dump($cake->display());
 /*
     string(146) "Cake
 
