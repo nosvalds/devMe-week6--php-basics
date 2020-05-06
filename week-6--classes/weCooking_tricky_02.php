@@ -14,8 +14,8 @@ class Ingredient
     // constructor
     public function __construct(string $name, array $dietaryNotes)  
     {
-        $this->$name = $name;
-        $this->$dietaryNotes = $dietaryNotes;
+        $this->name = $name;
+        $this->dietaryNotes = $dietaryNotes;
     }
 
     // methods
@@ -38,8 +38,8 @@ class Recipe
 {
     // properties
     private $name;
-    private $ingredients;
-    private $method;
+    private $ingredients = [];
+    private $method = "";
 
     // constructor
     public function __construct(string $name)     
@@ -50,9 +50,15 @@ class Recipe
     // methods
 
     // add Ingredients to Recipe
-    public function addIngredient(object $ingredient, string $amount) : object
+    public function addIngredient(object $ingredient, $amount) : object
     {
-        $this->ingredients[] = $ingredient;
+        $this->ingredients[] = 
+        [
+            "ingredient" => $ingredient,
+            "amount" => $amount,
+        ];
+        
+        return $this;
     }
 
     // add recipe method
@@ -82,7 +88,7 @@ $cake->addIngredient($eggs, 2);
 $cake->addMethod("Put them in a bowl, mix them together, cook for a bit. Job's a good'un");
 
 // we can see the recipe
-var_dump($cake->display());
+//var_dump($cake->display());
 /*
     string(146) "Cake
 
@@ -99,7 +105,7 @@ var_dump($cake->display());
  */
 
 // we can list dietary information
-var_dump($cake->dietary()); // string(29) "gluten, animal produce, dairy"
+//var_dump($cake->dietary()); // string(29) "gluten, animal produce, dairy"
 
 // is the recipe vegan? (i.e. contains animal produce)
-var_dump($cake->vegan()); // bool(false)
+// var_dump($cake->vegan()); // bool(false)
