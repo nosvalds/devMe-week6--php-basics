@@ -20,13 +20,13 @@ class BasketItem
     // methods
 
     // price
-    public function getPrice()
+    public function getPrice() : float
     {
         return $this->price;
     }
 
     // description
-    public function getDescription()
+    public function getDescription() : string
     {
         return $this->description;
     }
@@ -42,13 +42,14 @@ class Basket
     // methods
 
     // add items to basket
-    public function add(object $newItem)
+    public function add(object $newItem) : object
     {
         $this->items[] = $newItem;
+        return $this;
     }
 
     // total
-    public function total() 
+    public function total() : string
     {
         $total = 0;
         foreach ($this->items as $item) {
@@ -58,7 +59,7 @@ class Basket
     }
 
     // list items
-    public function items()
+    public function items() : array
     {
         $list = [];
         foreach ($this->items as $item) {
