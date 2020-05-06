@@ -10,7 +10,7 @@ class Person
     private $age;
 
     // constructor
-    public function __contruct(string $name, int $age) 
+    public function __construct(string $name, int $age) 
     {
         $this->name = $name;
         $this->age = $age;
@@ -28,6 +28,8 @@ class Person
 class House
 {
     // static methods
+
+        // census
     public static function census(array $houses) : array
     {
         $census = [];
@@ -39,19 +41,25 @@ class House
         return $census;
     }
 
+        // avgAge
+    public  static function averageAge(array $houses) : array
+    {
+        # code...
+    }
+
     // properties
     private $dwellers = [];
 
     // methods
 
-    // add dwellers
+        // add dwellers
     public function addDweller(object $person) : object
     {
         $this->dwellers[] = $person;
         return $this;
     }
 
-    // get dwellers
+        // get dwellers
     public function getDwellers() : array
     {
         return $this->dwellers;
@@ -63,6 +71,8 @@ $carlton = new Person("Carlton", 25);
 $ida = new Person("Ida", 32);
 $estelle = new Person("Estelle", 57);
 $jana = new Person("Jana", 48);
+
+//var_dump($ida);
 
 // create a house and put some peeps in
 $house1 = new House();
@@ -77,6 +87,7 @@ $house2->addDweller($estelle)
 // get back an array with all Person objects from the houses
 // the actual output will be a bit messier
 // but check it has the right number of people
+//var_dump($house1->getDwellers()); // check getDwellers() method
 var_dump(House::census([$house1, $house2])); // array(4) [$carlton, $ida, $estelle, $jana]
 var_dump(House::census([$house2])); // array(2) [$estelle, $jana]
 
