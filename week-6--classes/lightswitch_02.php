@@ -10,20 +10,20 @@ class LightSwitch
     
     // methods
 
-    // isOn?
+        // isOn - is the lightswitch on
     public function isOn() : bool
     {
         return $this->on;
     }
 
-    // turn on
+        // turn on - turn the light on
     public function turnOn() : object
     {
         $this->on = true;
         return $this;
     }
 
-    // turn off
+        // turn off - turn the light off
     public function turnOff() : object
     {
         $this->on = false;
