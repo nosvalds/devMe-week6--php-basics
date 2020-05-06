@@ -92,10 +92,20 @@ class Recipe
     }
 
     // dietary info list
-    public function dietary()
+    public function dietary() : string
     {
-        // string(29) "gluten, animal produce, dairy"
+        $dietaryList = [];
         
+        foreach ($this->ingredients as $ingredient) { // loop over ingredients
+            $dietAry = $ingredient["ingredient"]->getDietaryNotes(); // get dietary array
+            foreach ($dietAry as $dietaryItem) { // loop over that array and make a single array of all dietary restrictions
+                $dietaryList[] = $dietaryItem;
+            }
+        }
+
+        $dietaryList = array_unique($dietaryList); // remove duplicates
+
+        return implode($dietaryList,", "); // implode to turn into a string and return
     }
 }
 
@@ -135,7 +145,7 @@ var_dump($cake->display());
  */
 
 // we can list dietary information
-//var_dump($cake->dietary()); // string(29) "gluten, animal produce, dairy"
+var_dump($cake->dietary()); // string(29) "gluten, animal produce, dairy"
 
 // is the recipe vegan? (i.e. contains animal produce)
 // var_dump($cake->vegan()); // bool(false)
