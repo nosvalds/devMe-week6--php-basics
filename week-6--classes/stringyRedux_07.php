@@ -21,6 +21,7 @@ class StringyRedux
     {
         return $this->str;
     }
+    
     // lowercase
     public function lower() : object
     {
