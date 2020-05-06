@@ -158,3 +158,27 @@ var_dump($cake->dietary()); // string(29) "gluten, animal produce, dairy"
 
 // is the recipe vegan? (i.e. contains animal produce)
 var_dump($cake->vegan()); // bool(false)
+
+// ADDITIONAL TEST
+
+// a recipe takes a name
+$veganCake = new Recipe("Vegan Cake");
+
+// we can add ingredients plus amounts
+$veganCake->addIngredient($flour, "500g");
+$veganCake->addIngredient($sugar, "55g");
+
+// we can add a method
+$veganCake->addMethod("Put them in a bowl, mix them together, cook for a bit. Job's a good'un");
+
+// we can see the recipe
+var_dump($veganCake->display());
+/*
+    string(146) "Vegan Cake
+*/
+
+// we can list dietary information
+var_dump($veganCake->dietary()); // string(29) "gluten, animal produce, dairy"
+
+// is the recipe vegan? (i.e. contains animal produce)
+var_dump($veganCake->vegan()); // bool(false)
