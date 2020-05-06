@@ -37,12 +37,12 @@ class BasketItem
 class Basket
 {
     // properties
-    private $items;
+    private $items = [];
 
     // methods
 
     // add items to basket
-    public function add(object $newItem) : object
+    public function add(BasketItem $newItem) : Basket
     {
         $this->items[] = $newItem;
         return $this;
@@ -52,9 +52,11 @@ class Basket
     public function total() : string
     {
         $total = 0;
+
         foreach ($this->items as $item) {
             $total += $item->getPrice();
         }
+
         return "£" . number_format($total, 2);
     }
 
@@ -62,9 +64,11 @@ class Basket
     public function items() : array
     {
         $list = [];
+
         foreach ($this->items as $item) {
             $list[] = $item->getDescription();
         }
+        
         return $list;
     }
 }
